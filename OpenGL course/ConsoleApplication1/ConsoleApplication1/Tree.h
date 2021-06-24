@@ -7,6 +7,7 @@
 #include<stdio.h>
 
 
+
 static const char* vShader2 = "                                \n\
 #version 330 core \n\
 layout(location = 0) in vec3 pos; \n\
@@ -55,11 +56,13 @@ public:
 	GLuint getVBO();
 	void GenTexture();
 	unsigned int getTexture();
-
+	void printVertex();
+	float *getVertex();
 
 private:
 	GLuint VAO, VBO;
 	unsigned int texture;
+	float* vertex;
 
 };
 

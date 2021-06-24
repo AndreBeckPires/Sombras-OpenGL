@@ -115,7 +115,10 @@ int main()
 	janela.Init();
 	chao.CreateTriangle1();
 	arvore.CreateTriangle1();
-
+	//arvore.printVertex();
+	for (int i = 0; i < 30; i++) {
+		std::cout << arvore.getVertex()[i] << std::endl;
+	}
 
 	chao.GenTexture();
 	arvore.GenTexture();

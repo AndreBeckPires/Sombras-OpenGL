@@ -17,6 +17,17 @@ void Tree::CreateTriangle1()
 		-0.2f, 0.5f,0.0f,  1.0f, 0.0f,   // bottom right
 		 0.2f, 0.5f,0.0f,   0.0f, 0.0f,   // bottom left
 	};
+	vertex = new float[30]{
+		// positions         // texture coords
+		 0.2,  0.5f, 0.0f,    0.0f, 0.0f,   // top right
+		 0.2f, -0.5f, 0.0f,   0.0f, 1.0f,   // bottom right
+		-0.2f, -0.5f, 0.0f,   1.0f, 1.0f,   // bottom left
+
+		-0.2f, -0.5f,0.0f, 1.0f, 1.0f,   // top right
+		-0.2f, 0.5f,0.0f,  1.0f, 0.0f,   // bottom right
+		 0.2f, 0.5f,0.0f,   0.0f, 0.0f,   // bottom left
+	};
+
 	//alocar memoria de UM VAO e dar o bind nele
 	glGenVertexArrays(1, &VAO);
 	glGenBuffers(1, &VBO);
@@ -74,5 +85,18 @@ void Tree::GenTexture()
 unsigned int Tree::getTexture()
 {
 	return texture;
+}
+
+void Tree::printVertex()
+{
+	
+	for (int i = 0; i < 30; i++) {
+		std::cout << vertex[i] << std::endl;
+	}
+}
+
+float* Tree::getVertex()
+{
+	return vertex;
 }
 

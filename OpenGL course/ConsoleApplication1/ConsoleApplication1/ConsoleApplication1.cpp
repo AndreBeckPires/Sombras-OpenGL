@@ -177,14 +177,15 @@ int main()
 	//janela.Init();
 
 	Shader shaderProgram("default.vert", "default.frag");
-
+	Shader tree("tree.vert", "tree.frag");
 	//alocar memoria de UM VAO e dar o bind nele
-	VAO vao;
+	VAO vao,vao2;
 	vao.Bind();
-
 	chao.CreateTriangle1(vao);
 	chao.GenTexture();
-
+	vao2.Bind();
+	arvore.CreateTriangle1(vao2);
+	arvore.GenTexture();
 
 	// Enables the Depth Buffer
 	glEnable(GL_DEPTH_TEST);
@@ -204,18 +205,23 @@ int main()
 
 		// Tell OpenGL which Shader Program we want to use
 		shaderProgram.Activate();
-
+		tree.Activate();
 		// Handles camera inputs
 		camera.Inputs(window);
 		// Updates and exports the camera matrix to the Vertex Shader
 		camera.Matrix(45.0f, 0.1f, 100.0f, shaderProgram, "camMatrix");
 		vao.Bind();
-
-		//bind ta texture
+		////bind ta texture
 		glBindTexture(GL_TEXTURE_2D, chao.getTexture());
 		glDrawArrays(GL_TRIANGLES, 0, 6);
-		glBindVertexArray(0);
+		glBindVertexArray(1);
 
+		camera.Matrix(45.0f, 0.1f, 100.0f, tree, "camMatrix");
+		vao2.Bind();
+		//bind ta texture
+		glBindTexture(GL_TEXTURE_2D, arvore.getTexture());
+		glDrawArrays(GL_TRIANGLES, 0, 6);
+		glBindVertexArray(0);
 
 		//glDrawElements(GL_TRIANGLES, sizeof(indices) / sizeof(int), GL_UNSIGNED_INT, 0);
 
@@ -224,7 +230,11 @@ int main()
 		// Take care of all GLFW events
 		glfwPollEvents();
 	}
-
+	// Delete all the objects we've created
+	vao.Delete();
+	vao2.Delete();
+	shaderProgram.Delete();
+	tree.Delete();
 	// Delete window before ending the program
 	glfwDestroyWindow(window);
 	// Terminate GLFW before ending the program

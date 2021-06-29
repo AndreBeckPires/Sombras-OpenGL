@@ -9,9 +9,9 @@ layout (location = 2) in vec2 aTex;
 
 
 // Outputs the color for the Fragment Shader
-out vec3 color;
+out vec3 ourColor;
 // Outputs the texture coordinates to the fragment shader
-out vec2 texCoord;
+out vec2 TexCoord;
 
 // Imports the camera matrix from the main function
 uniform mat4 camMatrix;
@@ -22,7 +22,7 @@ void main()
 	// Outputs the positions/coordinates of all vertices
 	gl_Position = camMatrix * vec4(aPos, 1.0);
 	// Assigns the colors from the Vertex Data to "color"
-	color = aColor;
+	ourColor = aColor;
 	// Assigns the texture coordinates from the Vertex Data to "texCoord"
-	texCoord = aTex;
+	TexCoord = vec2(aTex.x, aTex.y);
 }

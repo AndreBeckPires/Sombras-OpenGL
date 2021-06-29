@@ -165,30 +165,30 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\..\..\Downloads\opengl-tutorials-main\YoutubeOpenGL 8 - Camera\Camera.cpp" />
-    <ClCompile Include="..\..\..\..\..\..\Downloads\opengl-tutorials-main\YoutubeOpenGL 8 - Camera\EBO.cpp" />
-    <ClCompile Include="..\..\..\..\..\..\Downloads\opengl-tutorials-main\YoutubeOpenGL 8 - Camera\shaderClass.cpp" />
-    <ClCompile Include="..\..\..\..\..\..\Downloads\opengl-tutorials-main\YoutubeOpenGL 8 - Camera\VAO.cpp" />
-    <ClCompile Include="..\..\..\..\..\..\Downloads\opengl-tutorials-main\YoutubeOpenGL 8 - Camera\VBO.cpp" />
+    <ClCompile Include="Camera.cpp" />
     <ClCompile Include="ConsoleApplication1.cpp" />
     <ClCompile Include="Floor.cpp" />
     <ClCompile Include="glad.c" />
+    <ClCompile Include="shaderClass.cpp" />
     <ClCompile Include="Tree.cpp" />
+    <ClCompile Include="VAO.cpp" />
+    <ClCompile Include="VBO.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\..\..\Downloads\opengl-tutorials-main\YoutubeOpenGL 8 - Camera\Camera.h" />
-    <ClInclude Include="..\..\..\..\..\..\Downloads\opengl-tutorials-main\YoutubeOpenGL 8 - Camera\EBO.h" />
-    <ClInclude Include="..\..\..\..\..\..\Downloads\opengl-tutorials-main\YoutubeOpenGL 8 - Camera\shaderClass.h" />
-    <ClInclude Include="..\..\..\..\..\..\Downloads\opengl-tutorials-main\YoutubeOpenGL 8 - Camera\VAO.h" />
-    <ClInclude Include="..\..\..\..\..\..\Downloads\opengl-tutorials-main\YoutubeOpenGL 8 - Camera\VBO.h" />
+    <ClInclude Include="Camera.h" />
     <ClInclude Include="Floor.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="shaderClass.h" />
     <ClInclude Include="Tree.h" />
+    <ClInclude Include="VAO.h" />
+    <ClInclude Include="VBO.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\..\..\..\..\Downloads\opengl-tutorials-main\YoutubeOpenGL 8 - Camera\default.frag" />
-    <None Include="..\..\..\..\..\..\Downloads\opengl-tutorials-main\YoutubeOpenGL 8 - Camera\default.vert" />
+    <None Include="default.frag" />
+    <None Include="default.vert" />
     <None Include="packages.config" />
+    <None Include="tree.frag" />
+    <None Include="tree.vert" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

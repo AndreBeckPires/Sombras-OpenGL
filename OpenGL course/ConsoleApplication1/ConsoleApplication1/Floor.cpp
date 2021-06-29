@@ -9,7 +9,7 @@ void Floor::CreateTriangle1(VAO& vao)
 {
 	GLfloat vertices[] = {
 		// positions               COLORS      /  // texture coords
-		 0.7f, -0.5f, 0.7f,  0.83f, 0.70f, 0.44f,  0.0f, 0.0f,   // top right
+		 0.7f, -0.5f, 0.7f,   0.83f, 0.70f, 0.44f,  0.0f, 0.0f,   // top right
 		 0.7f, -0.5f, -0.7f,  0.83f, 0.70f, 0.44f,  0.0f, 1.0f,   // bottom right
 		-0.7f, -0.5f, -0.7f,  0.83f, 0.70f, 0.44f,  1.0f, 1.0f,   // bottom left
 				  
@@ -45,7 +45,7 @@ void Floor::CreateTriangle1(VAO& vao)
 
 void Floor::GenTexture()
 {
-	glGenTextures(1, &texture);
+	glGenTextures(0, &texture);
 
 	glBindTexture(GL_TEXTURE_2D, texture);
 	// set the texture wrapping/filtering options (on the currently bound texture object)

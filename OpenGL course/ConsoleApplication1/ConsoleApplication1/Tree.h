@@ -6,7 +6,8 @@
 #include<GLFW/glfw3.h>
 #include <iostream>
 #include<stdio.h>
-
+#include "VAO.h"
+#include "VBO.h"
 
 
 static const char* vShader2 = "                                \n\
@@ -53,7 +54,7 @@ class Tree
 public:
 
 	Tree();
-	void CreateTriangle1();
+	void CreateTriangle1(VAO& vao);
 
 	GLuint getVAO();
 
@@ -64,7 +65,7 @@ public:
 	float *getVertex();
 
 private:
-	GLuint VAO, VBO;
+//	GLuint VAO, VBO;
 	unsigned int texture;
 	float* vertex;
 

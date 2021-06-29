@@ -5,17 +5,17 @@ Tree::Tree()
 {
 }
 
-void Tree::CreateTriangle1()
+void Tree::CreateTriangle1(VAO& vao)
 {
 	float vertices[] = {
-		// positions         // texture coords
-		 0.2,   0.5f, -1.0f,   0.0f, 0.0f,   // top right
-		 0.2f, -0.5f, -1.0f,   0.0f, 1.0f,   // bottom right
-		-0.2f, -0.5f, -1.0f,   1.0f, 1.0f,   // bottom left
+		// positions               COLORS      /   // texture coords
+		 0.4,   0.6f, 0.0f,  0.83f, 0.70f, 0.44f,   0.0f, 0.0f,   // top right
+		 0.4f, -0.6f, 0.0f,  0.83f, 0.70f, 0.44f,   0.0f, 1.0f,   // bottom right
+		-0.4f, -0.6f, 0.0f,  0.83f, 0.70f, 0.44f,   1.0f, 1.0f,   // bottom left
 
-		-0.2f, -0.5f, -1.0f,   1.0f, 1.0f,   // top right
-		-0.2f,  0.5f, -1.0f,   1.0f, 0.0f,   // bottom right
-		 0.2f,  0.5f, -1.0f,   0.0f, 0.0f,   // bottom left
+		-0.4f, -0.6f, 0.0f,  0.83f, 0.70f, 0.44f,   1.0f, 1.0f,   // top right
+		-0.4f,  0.6f, 0.0f,  0.92f, 0.86f, 0.76f,   1.0f, 0.0f,   // bottom right
+		 0.4f,  0.6f, 0.0f,  0.92f, 0.86f, 0.76f,   0.0f, 0.0f,   // bottom left
 	};
 	vertex = new float[30]{
 		// positions         // texture coords
@@ -28,35 +28,46 @@ void Tree::CreateTriangle1()
 		 0.2f,  0.5f, 0.0f, 0.0f, 0.0f,   // bottom left
 	};
 
-	//alocar memoria de UM VAO e dar o bind nele
-	glGenVertexArrays(1, &VAO);
-	glGenBuffers(1, &VBO);
 
-	glBindVertexArray(VAO);
-	glBindBuffer(GL_ARRAY_BUFFER, VBO);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+	VBO vbo(vertices, sizeof(vertices));
 
 
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
-	glEnableVertexAttribArray(0);
+	vao.LinkAttrib(vbo, 0, 3, GL_FLOAT, 8 * sizeof(float), (void*)0);
+	vao.LinkAttrib(vbo, 1, 3, GL_FLOAT, 8 * sizeof(float), (void*)(3 * sizeof(float)));
+	vao.LinkAttrib(vbo, 2, 2, GL_FLOAT, 8 * sizeof(float), (void*)(6 * sizeof(float)));
+
+	vao.Unbind();
+	vbo.Unbind();
+
+	////alocar memoria de UM VAO e dar o bind nele
+	//glGenVertexArrays(1, &VAO);
+	//glGenBuffers(1, &VBO);
+
+	//glBindVertexArray(VAO);
+	//glBindBuffer(GL_ARRAY_BUFFER, VBO);
+	//glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+
+
+	//glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
+	//glEnableVertexAttribArray(0);
 
 	// texture coord attribute
-	glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
-	glEnableVertexAttribArray(2);
+	//glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
+	//glEnableVertexAttribArray(2);
 }
 
 
 
-GLuint Tree::getVAO()
-{
-	return VAO;
-}
-
-
-GLuint Tree::getVBO()
-{
-	return VBO;
-}
+//GLuint Tree::getVAO()
+//{
+//	return VAO;
+//}
+//
+//
+//GLuint Tree::getVBO()
+//{
+//	return VBO;
+//}
 
 void Tree::GenTexture()
 {

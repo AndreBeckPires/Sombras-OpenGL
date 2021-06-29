@@ -1,7 +1,8 @@
 #pragma once
 
 
-#include<GL/glew.h>
+//#include<GL/glew.h>
+#include <glad/glad.h>
 #include<GLFW/glfw3.h>
 #include <iostream>
 #include<stdio.h>
@@ -16,6 +17,9 @@ layout(location = 2) in vec2 aTexCoord; \n\
  \n\
 out vec3 ourColor;\n\
 out vec2 TexCoord;\n\
+uniform mat4 model;\n\
+uniform mat4 view;\n\
+uniform mat4 projection;\n\
 \n\
 void main()\n\
 {\n\

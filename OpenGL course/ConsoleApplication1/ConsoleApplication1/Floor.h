@@ -1,10 +1,13 @@
 #pragma once
 
 
-#include<GL/glew.h>
+//#include<GL/glew.h>
+#include <glad/glad.h>
 #include<GLFW/glfw3.h>
 #include <iostream>
 #include<stdio.h>
+#include "VAO.h"
+#include "VBO.h"
 
 
 static const char* vShader = "                                \n\
@@ -45,15 +48,16 @@ class Floor
 public:
 	
 	Floor();
-	void CreateTriangle1();
-	GLuint getVAO();
-	GLuint getVBO();
+	void CreateTriangle1(VAO& vao);
+	//GLuint getVAO();
+	//GLuint getVBO();
 	void GenTexture();
 	unsigned int getTexture();
-
+	void bindVao();
 private:
 	unsigned int texture;
-	GLuint VAO, VBO;
+	//VAO vao;
+	//VBO vbo;
 
 };
 

@@ -24,7 +24,22 @@
     <ClCompile Include="Tree.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Window.cpp">
+    <ClCompile Include="glad.c">
+      <Filter>Arquivos de Recurso</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Downloads\opengl-tutorials-main\YoutubeOpenGL 8 - Camera\Camera.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Downloads\opengl-tutorials-main\YoutubeOpenGL 8 - Camera\shaderClass.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Downloads\opengl-tutorials-main\YoutubeOpenGL 8 - Camera\VAO.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Downloads\opengl-tutorials-main\YoutubeOpenGL 8 - Camera\VBO.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Downloads\opengl-tutorials-main\YoutubeOpenGL 8 - Camera\EBO.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
   </ItemGroup>
@@ -35,8 +50,32 @@
     <ClInclude Include="Tree.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Window.h">
+    <ClInclude Include="resource.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Downloads\opengl-tutorials-main\YoutubeOpenGL 8 - Camera\Camera.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Downloads\opengl-tutorials-main\YoutubeOpenGL 8 - Camera\shaderClass.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Downloads\opengl-tutorials-main\YoutubeOpenGL 8 - Camera\VAO.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Downloads\opengl-tutorials-main\YoutubeOpenGL 8 - Camera\VBO.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Downloads\opengl-tutorials-main\YoutubeOpenGL 8 - Camera\EBO.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="..\..\..\..\..\..\Downloads\opengl-tutorials-main\YoutubeOpenGL 8 - Camera\default.frag">
+      <Filter>Arquivos de Recurso</Filter>
+    </None>
+    <None Include="..\..\..\..\..\..\Downloads\opengl-tutorials-main\YoutubeOpenGL 8 - Camera\default.vert">
+      <Filter>Arquivos de Recurso</Filter>
+    </None>
   </ItemGroup>
 </Project>
